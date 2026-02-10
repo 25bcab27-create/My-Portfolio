@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body class="bg-gray-100 text-gray-900 font-sans">
+
+    <header class="bg-blue-600 text-white p-10 text-center">
+        <h1 class="text-4xl font-bold">Welcome to My Portfolio</h1>
+        <p class="mt-2">I am a student at Kristu Jayanti University.</p>
+    </header>
+
+    <main class="max-w-2xl mx-auto p-6 mt-10 bg-white shadow-md rounded-lg">
+        <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
+        
+        <div class="space-y-4">
+            <input type="text" id="userName" placeholder="Your Name" class="w-full p-2 border rounded">
+            <textarea id="userMessage" placeholder="Your Message" class="w-full p-2 border rounded h-32"></textarea>
+            <button onclick="sendData()" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition">
+                Send to Database
+            </button>
+        </div>
+    </main>
+
+    <script>
+        // REPLACE THESE with the keys from your Supabase Project Settings > API
+        const SUPABASE_URL = 'https://your-project-id.supabase.co';
+        const SUPABASE_ANON_KEY = 'your-public-anon-key';
+
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        async function sendData() {
+            const name = document.getElementById('userName').value;
+            const message = document.getElementById('userMessage').value;
+
+            const { data, error } = await _supabase
+                .from('contacts') // This must match the table name you created
+                .insert([{ name: name, message: message }]);
+
+            if (error) {
+                console.error(error);
+                alert("Error saving data!");
+            } else {
+                alert("Success! Your message is in the database.");
+            }
+        }
+    </script>
+</body>
+</html>
