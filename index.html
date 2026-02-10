@@ -3,49 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Hannah Robin | Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
-<body class="bg-gray-100 text-gray-900 font-sans">
+<body class="bg-slate-50 text-slate-900 font-sans scroll-smooth">
 
-    <header class="bg-blue-600 text-white p-10 text-center">
-        <h1 class="text-4xl font-bold">Welcome to My Portfolio</h1>
-        <p class="mt-2">I am a student at Kristu Jayanti University.</p>
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 p-4">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <span class="font-bold text-xl text-blue-600">HR.</span>
+            <div class="space-x-6 text-sm font-medium">
+                <a href="#about" class="hover:text-blue-600 transition">About</a>
+                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
+                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="py-20 px-6 text-center bg-gradient-to-b from-blue-50 to-slate-50">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight">
+            Hannah Robin
+        </h1>
+        <p class="mt-4 text-lg md:text-xl text-slate-600 max-w-2xl mx-auto">
+            18-year-old Aspiring Software Developer & BCA Student at Kristu Jayanti University.
+        </p>
+        <div class="mt-8">
+            <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+                Get In Touch
+            </a>
+        </div>
     </header>
 
-    <main class="max-w-2xl mx-auto p-6 mt-10 bg-white shadow-md rounded-lg">
-        <h2 class="text-2xl font-semibold mb-4">Contact Me</h2>
-        
-        <div class="space-y-4">
-            <input type="text" id="userName" placeholder="Your Name" class="w-full p-2 border rounded">
-            <textarea id="userMessage" placeholder="Your Message" class="w-full p-2 border rounded h-32"></textarea>
-            <button onclick="sendData()" class="w-full bg-blue-600 text-white p-3 rounded hover:bg-blue-700 transition">
-                Send to Database
-            </button>
-        </div>
+    <main class="max-w-5xl mx-auto px-6 pb-20">
+
+        <section id="about" class="py-16 border-b border-slate-200">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6 text-blue-600">About Me</h2>
+                    <p class="text-slate-600 leading-relaxed mb-4">
+                        I am currently pursuing my **Bachelors in Computer Applications (BCA)**. I am passionate about building full-stack applications and exploring how modern technology can solve real-world problems.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        My goal is to transition from a student to a professional software developer, focusing on clean code, efficient databases, and user-friendly interfaces.
+                    </p>
+                </div>
+                <div class="bg-blue-600 h-64 rounded-2xl flex items-center justify-center text-white text-7xl font-bold italic shadow-xl">
+                    HR
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-16 border-b border-slate-200">
+            <h2 class="text-3xl font-bold mb-10 text-center">Technical Toolbox</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 text-center">
+                    <div class="text-blue-600 font-bold mb-2">Frontend</div>
+                    <p class="text-sm text-slate-500">HTML, CSS, JavaScript, Tailwind</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 text-center">
+                    <div class="text-blue-600 font-bold mb-2">Backend</div>
+                    <p class="text-sm text-slate-500">Node.js, Supabase</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 text-center">
+                    <div class="text-blue-600 font-bold mb-2">Database</div>
+                    <p class="text-sm text-slate-500">PostgreSQL (Supabase)</p>
+                </div>
+                <div class="p-6 bg-white rounded-xl shadow-sm border border-slate-100 text-center">
+                    <div class="text-blue-600 font-bold mb-2">Tools</div>
+                    <p class="text-sm text-slate-500">Git, GitHub, Vercel</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-16 border-b border-slate-200">
+            <h2 class="text-3xl font-bold mb-10">Featured Work</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition">
+                    <div class="p-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Full-Stack</span>
+                        <h3 class="text-2xl font-bold mt-2">Professional Portfolio</h3>
+                        <p class="text-slate-600 mt-4">
+                            A dynamic SPA featuring a real-time contact system integrated with a cloud-hosted PostgreSQL database.
+                        </p>
+                        <div class="mt-6 flex items-center text-sm font-medium text-blue-600">
+                            Requirement #1 Met <span class="ml-2">✓</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition">
+                    <div class="p-8">
+                        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Education</span>
+                        <h3 class="text-2xl font-bold mt-2">BCA Assignments</h3>
+                        <p class="text-slate-600 mt-4">
+                            A collection of coursework projects focusing on core computer application concepts and data management.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16">
+            <div class="bg-blue-600 rounded-3xl p-10 text-white text-center shadow-2xl">
+                <h2 class="text-3xl font-bold mb-4">Let's Build Something Together</h2>
+                <p class="opacity-80 mb-8">Send a message directly to my database!</p>
+                
+                <div class="max-w-md mx-auto space-y-4 text-left">
+                    <label class="block text-sm font-medium opacity-90">Your Name</label>
+                    <input type="text" id="userName" placeholder="Enter your name" class="w-full p-3 rounded-lg text-slate-900 outline-none focus:ring-4 focus:ring-blue-300">
+                    
+                    <label class="block text-sm font-medium opacity-90">Your Message</label>
+                    <textarea id="userMessage" placeholder="How can I help you?" class="w-full p-3 rounded-lg text-slate-900 outline-none h-32 focus:ring-4 focus:ring-blue-300"></textarea>
+                    
+                    <button onclick="sendData()" class="w-full bg-slate-900 text-white p-4 rounded-lg font-bold hover:bg-slate-800 transition active:scale-95 shadow-xl">
+                        Send to Database
+                    </button>
+                </div>
+            </div>
+        </section>
+
     </main>
 
+    <footer class="py-10 text-center text-slate-400 text-sm border-t border-slate-100">
+        © 2026 Hannah Robin • BCA Student at Kristu Jayanti University
+    </footer>
+
     <script>
-        // REPLACE THESE with the keys from your Supabase Project Settings > API
-        const SUPABASE_URL = 'https://your-project-id.supabase.co';
-        const SUPABASE_ANON_KEY = 'your-public-anon-key';
+        
+        const SUPABASE_URL = 'https://bgniprlpmqydmeiozdjd.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJnbmlwcmxwbXF5ZG1laW96ZGp dIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA3MzE4MzUsImV4cCI6MjA4NjMwNzgzNX0.7-I4RQJdW-WlBsHlLFHGa7FgXAIk5SVXMMNlfROlZZE';
 
         const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         async function sendData() {
-            const name = document.getElementById('userName').value;
-            const message = document.getElementById('userMessage').value;
+            const nameInput = document.getElementById('userName');
+            const messageInput = document.getElementById('userMessage');
+
+            
+            if (!nameInput.value || !messageInput.value) {
+                alert("Please fill in both fields!");
+                return;
+            }
 
             const { data, error } = await _supabase
-                .from('contacts') // This must match the table name you created
-                .insert([{ name: name, message: message }]);
+                .from('contacts') 
+                .insert([{ name: nameInput.value, message: messageInput.value }]);
 
             if (error) {
                 console.error(error);
-                alert("Error saving data!");
+                alert("Error: Database connection failed. Check your RLS policies!");
             } else {
-                alert("Success! Your message is in the database.");
+                alert("Success! Your message has been stored in Hannah's PostgreSQL database.");
+                nameInput.value = "";
+                messageInput.value = "";
             }
         }
     </script>
